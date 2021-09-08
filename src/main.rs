@@ -1,7 +1,9 @@
-fn dolphin_say(message: &str) {
-    let length = message.len() + 7;
+
+fn dolphin_say(message: impl ToString) {
+    let m = message.to_string();
+    let length = m.len() + 7;
     println!("{}", "-".repeat(length));
-    println!("<  {}!  >", message);
+    println!("<  {}!  >", m);
     println!("{}", "-".repeat(length));
     println!("    \\                                      _");
     println!("     \\                                _.-~~.)");
@@ -24,7 +26,8 @@ fn dolphin_say(message: &str) {
 }
 
 fn main() {
-    let sound = "eeeee";
+    // let sound = "eeeee";
+    let sound: u32 = 48;
     // println!("{}!", sound);
     dolphin_say(sound);
 }
