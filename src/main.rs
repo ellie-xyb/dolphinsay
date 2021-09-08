@@ -1,7 +1,8 @@
 fn dolphin_say(message: &str) {
-    println!("-----------------");
-    println!("   <{}!>", message);
-    println!("-----------------");
+    let length = message.len() + 7;
+    println!("{}", "-".repeat(length));
+    println!("<  {}!  >", message);
+    println!("{}", "-".repeat(length));
     println!("    \\                                      _");
     println!("     \\                                _.-~~.)");
     println!("      \\         _.--~~~~~---....__  .' . .,'");
