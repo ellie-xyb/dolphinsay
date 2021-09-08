@@ -1,3 +1,12 @@
+struct Animal {
+    sound: String,
+}
+
+impl ToString for Animal {
+    fn to_string(&self) -> String {
+        self.sound.clone()
+    }
+}
 
 fn dolphin_say(message: impl ToString) {
     let m = message.to_string();
@@ -26,8 +35,9 @@ fn dolphin_say(message: impl ToString) {
 }
 
 fn main() {
-    // let sound = "eeeee";
-    let sound: u32 = 48;
-    // println!("{}!", sound);
-    dolphin_say(sound);
-}
+    let animal_sound = Animal {
+        sound: "haha".to_string(),
+    };
+    animal_sound.to_string();
+    dolphin_say(animal_sound);
+} 
